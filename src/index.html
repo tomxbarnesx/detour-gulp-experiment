@@ -1,0 +1,211 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <!--Delete for production-->
+    <link rel="shortcut icon" href="#">
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-video"
+      src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+    <script async custom-element="amp-story"
+        src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
+    <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+    <script async src="./js/app.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <title>Deconstructed: Russian Psyops</title>
+    <link rel="canonical" href="http://api.frame.media/stories/deconstructed-russian-psyops/?fbclid=IwAR210cmAnf4zDBuPujQ9TwW6siqT-M1nPJV3E4_ays8MxNEceQALoJC124o" />
+    <meta name="viewport"
+        content="width=device-width,minimum-scale=1,initial-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <style amp-custom>
+      amp-story {
+        font-family: 'Roboto Condensed', sans-serif;
+        color: #fff;
+      }
+      amp-story-page {
+        background-color: #000;
+      }
+      #cta-experiment {
+          background-color: red;
+          color: white;
+          width: 5em;
+          padding: .5em;
+          border-radius: .5em;
+          margin: 0 auto;
+          text-align: center;
+          font-size: 150%;
+      }
+      #hidden-element {
+          display: none;
+      }
+
+      #hidden-element.show{
+          display: block;
+      }
+
+      #detour-vid {
+        z-index: 9997;
+        width: 110%;
+        position: absolute;
+      }
+
+      #overlay {
+        z-index: 9999;
+        position: absolute;
+        top: 600px;
+        background-color: red;
+        color: white;
+        width: 5em;
+        padding: .5em;
+        border-radius: .5em;
+        text-align: center;
+      }
+
+      #vid-container {
+        font-family: 'Roboto Condensed', sans-serif;
+        position: relative;
+        color: #fff;
+        background-color: #000;
+        height: 800px;
+        max-width: 23.5em;
+        margin: 300px auto 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+        <amp-story standalone
+        title="Deconstructed: Russian Psyops"        
+        publisher="Frame"
+            
+      >
+        
+        <amp-story-page
+          id="Launch" 
+        >
+            <amp-install-serviceworker
+                src="./service-worker.js"
+                layout="nodisplay">
+            </amp-install-serviceworker>
+          <amp-story-grid-layer template="fill">
+              <amp-img
+                src="./images/Launch.jpg"
+                layout="responsive"
+                width="592"
+                height="1067"
+              >
+              </amp-img>
+          </amp-story-grid-layer>
+        </amp-story-page>
+        
+
+        <amp-story-page
+          id="RP1"
+          auto-advance-after=RP1-video
+        >
+
+          <amp-story-grid-layer template="fill">  
+              <amp-video
+                id="RP1-video"
+                layout="fill"
+                src="./videos/RP1.mp4"
+                muted
+                autoplay
+                playsinline 
+              >
+              </amp-video>
+          </amp-story-grid-layer>
+        </amp-story-page>
+
+
+        <amp-story-page
+          id="RP2"
+          auto-advance-after=RP2-video
+        >
+
+          <amp-story-grid-layer template="fill">
+              <amp-video
+                id="RP2-video"
+                layout="fill"
+                src="./videos/RP2.mp4"
+                muted
+                autoplay
+                playsinline
+              >
+              </amp-video>
+
+          </amp-story-grid-layer>  
+        </amp-story-page>
+        
+
+        <amp-story-page
+          id="Title"
+          name="Title"
+        >
+
+          <amp-story-grid-layer template="fill">
+              <amp-img
+                src="./images/TitleSlide.jpg"
+                layout="responsive"
+                width="600"
+                height="1072" 
+              >
+              </amp-img>
+          </amp-story-grid-layer>
+            <amp-story-cta-layer>
+                <div id="cta-experiment"
+                  animate-in="pulse"
+                  animate-in-delay="0.3s"
+                  animate-in-duration="1.5s">
+                    <a href="#SomeLabel" style="color: white;">DETOUR</a>
+                </div>
+            </amp-story-cta-layer>
+        </amp-story-page>
+        
+        <amp-story-page
+          id="Part1"
+          name="Part1"
+        >
+          
+          <amp-story-grid-layer template="fill">
+              <amp-img
+                src="./images/Part1.jpg"
+                layout="responsive"
+                width="598"
+                height="1068"
+              >
+              </amp-img>
+          </amp-story-grid-layer>
+        </amp-story-page>
+    
+        
+    </amp-story>
+
+
+    <div id="SomeLabel" name="SomeLabel">
+      <div id="vid-container">
+        <h1>The Russian Propaganda Machine in Action</h1>
+        <img id="detour-img" src="./images/propaganda.jpg">
+        <div id="overlay"><a href="#Part1" style="color: white;">Return</a></div>
+        <!-- <video id="detour-vid" controls>
+            <source src="./videos/RP1.mp4" type="video/mp4">
+        </video> -->
+      </div>
+      <img src="./images/propaganda2.jpg" style="display: none;">
+
+
+    </div>
+
+
+</body>
+<style>
+      .i-amphtml-story-progress-bar {
+        display: none!important;
+      }
+</style>
+</html>
+  

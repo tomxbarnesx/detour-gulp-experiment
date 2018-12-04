@@ -1,0 +1,8 @@
+#SomeLabel {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #fff;
+    background-color: #000;
+    height: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
