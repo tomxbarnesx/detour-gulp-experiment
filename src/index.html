@@ -12,7 +12,7 @@
     <script async custom-element="amp-story"
         src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
     <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
-    <script async src="./js/app.js"></script>
+    <script async src="./detour.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <title>Deconstructed: Russian Psyops</title>
     <!-- <link rel="canonical" href="http://api.frame.media/stories/deconstructed-russian-psyops/?fbclid=IwAR210cmAnf4zDBuPujQ9TwW6siqT-M1nPJV3E4_ays8MxNEceQALoJC124o" /> -->
@@ -27,22 +27,85 @@
       amp-story-page {
         background-color: #000;
       }
+
+      body {
+        /* background: rgb(0,0,0);
+        background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(171,171,171,1) 50%, rgba(0,0,0,1) 100%); */
+        background: rgb(128,128,128);
+        background: radial-gradient(circle, rgba(128,128,128,1) 48%, rgba(46,46,46,1) 100%);
+      }
+
       #cta-experiment {
-          background-color: red;
+          /* background-color: red;
           color: white;
           width: 5em;
           padding: .5em;
-          border-radius: .5em;
+          border-radius: .5em; */
           margin: 0 auto;
+          padding: 1em;
           text-align: center;
-          font-size: 150%;
-      }
-      #hidden-element {
-          display: none;
+          /* font-size: 150%; */
       }
 
-      #hidden-element.show{
-          display: block;
+      a {
+        text-decoration: none;
+      }
+
+      #DetourLanding {
+        /* margin-top: 100em;
+        height:100vh;
+        min-height:100vh; */
+      }
+
+      #detour-window {
+        height: 100vh;
+        min-height: 100vh;
+      }
+
+      .detour-button {
+        font-family: Futura;
+        font-size: 200%;
+        margin: 2em auto;
+        color: #4c617a;
+        background-color: black;
+        border: 5px solid #4c617a;
+        padding: 5px;
+        box-shadow: 0px 0px 20px 2px white;        
+      }
+
+      .return-button {
+        font-family: Futura;
+        font-size: 200%;
+        /* margin: 2em auto; */
+        color: #4c617a;
+        background-color: black;
+        border: 5px solid #4c617a;
+        padding: 5px;
+        box-shadow: 0px 0px 20px 2px white;  
+        z-index: 9999;
+        position: absolute;
+        bottom: 10%;
+        left: 33%;
+      }
+
+      #detour-vid-container {
+        font-family: 'Roboto Condensed', sans-serif;
+        position: relative;
+        color: #fff;
+        background-color: #000;
+        border-radius: 1em;
+        /* height: 546px;
+        width: 35%;
+        margin-left: auto;
+        margin-right: auto; */
+        height: 700px;
+        width: 100%;
+        max-width: 25em;
+        margin: 300px auto 3%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
       }
 
       #detour-vid {
@@ -51,7 +114,7 @@
         position: absolute;
       }
 
-      #overlay {
+      /* #overlay {
         z-index: 9999;
         position: absolute;
         top: 600px;
@@ -61,26 +124,20 @@
         padding: .5em;
         border-radius: .5em;
         text-align: center;
-      }
+      } */
 
-      #vid-container {
-        font-family: 'Roboto Condensed', sans-serif;
-        position: relative;
-        color: #fff;
-        background-color: #000;
-        height: 800px;
-        max-width: 23.5em;
-        margin: 300px auto 0px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      #return-target {
+        height: 1px;
+        visibility: hidden;
       }
     </style>
   </head>
   <body>
+      <span id="return-target"></span>
         <amp-story standalone
         title="Deconstructed: Russian Psyops"        
         publisher="Frame"
+        id="TopMost"
             
       >
         
@@ -114,8 +171,7 @@
                 layout="fill"
                 src="./videos/RP1.mp4"
                 muted
-                autoplay
-                playsinline 
+                autoplay 
               >
               </amp-video>
           </amp-story-grid-layer>
@@ -137,7 +193,6 @@
                 playsinline
               >
               </amp-video>
-
           </amp-story-grid-layer>  
         </amp-story-page>
         
@@ -156,14 +211,14 @@
               >
               </amp-img>
           </amp-story-grid-layer>
-            <amp-story-cta-layer>
-                <div id="cta-experiment"
-                  animate-in="pulse"
-                  animate-in-delay="0.3s"
-                  animate-in-duration="1.5s">
-                    <a href="#SomeLabel" style="color: white;">DETOUR</a>
-                </div>
-            </amp-story-cta-layer>
+          <amp-story-cta-layer>
+            <div id="cta-experiment"
+              animate-in="fly-in-bottom"
+              animate-in-delay="0s"
+              animate-in-duration=".8s">
+              <a id="detour-trigger" href="#DetourLanding"><span class="detour-button">DETOUR</span></a>
+            </div>
+          </amp-story-cta-layer>
         </amp-story-page>
         
         <amp-story-page
@@ -184,20 +239,16 @@
     
         
     </amp-story>
-
-
-    <div id="SomeLabel" name="SomeLabel">
-      <div id="vid-container">
-        <h1>The Russian Propaganda Machine in Action</h1>
-        <img id="detour-img" src="./images/propaganda.jpg">
-        <div id="overlay"><a href="#Part1" style="color: white;">Return</a></div>
-        <!-- <video id="detour-vid" controls>
+    <div id="detour-window">
+      <span id="DetourLanding"></span>
+      <div id="detour-vid-container">
+        <!-- <h1>The Russian Propaganda Machine in Action</h1> -->
+        <!-- <img id="detour-img" src="./images/propaganda.jpg"> -->
+        <a id="detour-return" href="#return-target"><span class="return-button">RETURN</span></a>
+        <video id="detour-vid" controls>
             <source src="./videos/RP1.mp4" type="video/mp4">
-        </video> -->
+        </video>
       </div>
-      <img src="./images/propaganda2.jpg" style="display: none;">
-
-
     </div>
 
 

@@ -2,7 +2,7 @@ var cacheName = 'v1';
 var cacheFiles = [
     './',
     './index.html',
-    './js/app.js',
+    // './js/app.js',
     // './detour.html',
     './detour.js',
     // './images/Launch.jpg',
